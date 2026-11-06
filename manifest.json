@@ -1,9 +1,9 @@
 {
-  "name": "PapisitosCantantes",
-  "short_name": "Papisitos",
+  "name": "Jagged Little Pill",
+  "short_name": "Jagged Pill",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#170a24",
-  "theme_color": "#170a24",
-  "icons": [{ "src": "img/icon512.png", "sizes": "512x512", "type": "image/png" }]
+  "background_color": "#0e1a2b",
+  "theme_color": "#0e1a2b",
+  "icons": [{ "src": "img/icon512-jlp.png", "sizes": "512x512", "type": "image/png" }]
 }

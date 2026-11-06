@@ -3,36 +3,37 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>PapisitosCantantes</title>
+<title>Jagged Little Pill</title>
 <meta name="description" content="Sing the must-know lines at the Alanis Morissette show. Tap 🎧 and it finds the song.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://29blancalf.github.io/papisitos-cantantes/">
-<meta property="og:title" content="PapisitosCantantes · Alanis edition">
+<meta property="og:title" content="Jagged Little Pill · Alanis Morissette sing-along">
 <meta property="og:description" content="Sing the must-know lines at the Alanis Morissette show. Tap 🎧 and it finds the song.">
-<meta property="og:image" content="https://29blancalf.github.io/papisitos-cantantes/img/share.png">
+<meta property="og:image" content="https://29blancalf.github.io/papisitos-cantantes/img/share-jlp.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="1200">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://29blancalf.github.io/papisitos-cantantes/img/share.png">
-<link rel="apple-touch-icon" href="img/icon.png">
-<link rel="icon" type="image/png" href="img/icon.png">
-<meta name="apple-mobile-web-app-title" content="Papisitos">
+<meta name="twitter:image" content="https://29blancalf.github.io/papisitos-cantantes/img/share-jlp.png">
+<link rel="apple-touch-icon" href="img/icon-jlp.png">
+<link rel="icon" type="image/png" href="img/icon-jlp.png">
+<meta name="apple-mobile-web-app-title" content="Jagged Pill">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#170a24">
+<meta name="theme-color" content="#0e1a2b">
 <link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Figtree:wght@400;600;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Permanent+Marker&family=Figtree:wght@400;600;800&display=swap">
 <style>
 /* Layout: one phone screen. Search on top, giant "sing now" stage in the middle, sync controls at the thumb. */
 :root{
-  --night:#170a24;        /* arena dark */
-  --haze:#2a1340;         /* stage smoke */
-  --spot:#ffd23f;         /* follow-spot yellow: lines you MUST sing */
-  --pink:#ff4f9a;         /* lighting-rig pink: accents */
-  --mist:#b9a6d1;         /* muted text */
-  --ink:#fff7e8;          /* main text */
+  --night:#0e1a2b;        /* midnight denim */
+  --haze:#21405f;         /* faded denim */
+  --spot:#ffb547;         /* amber: lines you MUST sing */
+  --pink:#d9512c;         /* rust: accents */
+  --mist:#a9b8c8;         /* washed-out blue-grey text */
+  --ink:#f3ece0;          /* cream: main text */
+  --title:"Permanent Marker","Marker Felt","Comic Sans MS",cursive;
   --display:"Bowlby One","Arial Black",Impact,sans-serif;
   --body:"Figtree",system-ui,-apple-system,sans-serif;
   color-scheme:dark;
@@ -50,12 +51,10 @@ body{
 }
 [hidden]{display:none!important}
 header{display:flex;align-items:baseline;justify-content:space-between;gap:8px;flex-wrap:wrap}
-h1{font-family:var(--display);font-size:clamp(1.05rem,5.4vw,1.35rem);margin:0;letter-spacing:.01em}
+h1{font-family:var(--title);font-weight:400;font-size:clamp(1.3rem,6.4vw,1.7rem);line-height:1.05;margin:0;letter-spacing:.01em}
 h1 span{color:var(--pink)}
 .brand{display:flex;align-items:center;gap:10px}
-.papis{display:flex;flex:none}
-.papis img{width:54px;height:54px;border-radius:50%;border:3px solid var(--pink);background:var(--haze)}
-.papis img+img{margin-left:-14px;border-color:var(--spot)}
+.logo{width:60px;height:60px;flex:none}
 .dancers{display:flex;justify-content:center;gap:14px}
 .dancers figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:4px}
 .dancers img{width:72px;height:72px;border-radius:50%;border:3px solid #ffffff30}
@@ -84,13 +83,13 @@ button:focus-visible,input:focus-visible,li:focus-visible{outline:3px solid var(
 .setlist button.saved::after{content:" ✓";color:var(--spot)}
 #saveAll{width:100%;margin-top:10px;background:var(--spot);color:var(--night);font-weight:800}
 #intro{min-height:calc(100svh - 110px);display:flex;flex-direction:column;justify-content:center;gap:18px}
-#intro h2{font-family:var(--display);font-size:clamp(1.6rem,7vw,2.2rem);margin:0;text-wrap:balance}
+#intro h2{font-family:var(--title);font-weight:400;font-size:clamp(1.6rem,7vw,2.2rem);margin:0;text-wrap:balance}
 #intro h2 span{color:var(--spot)}
 .steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
 .steps li{display:grid;grid-template-columns:2.2rem 1fr;gap:12px;align-items:start;line-height:1.4}
 .steps li>b:first-child{display:grid;place-items:center;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--pink);font-family:var(--display);font-weight:400}
 .steps .when{display:block;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--mist)}
-.steps .tonight{background:#ffd23f14;border:1px solid #ffd23f55;border-radius:14px;padding:12px}
+.steps .tonight{background:#ffb54714;border:1px solid #ffb54755;border-radius:14px;padding:12px}
 .steps .tonight>b:first-child{background:var(--spot);color:var(--night)}
 .steps .how{display:block;margin-top:6px;color:var(--mist);font-size:.9rem}
 .steps .how b{color:var(--ink)}
@@ -110,7 +109,7 @@ button:focus-visible,input:focus-visible,li:focus-visible{outline:3px solid var(
 #stage{flex:1;display:flex;flex-direction:column;justify-content:center;gap:14px;text-align:center;min-height:42vh}
 .label{font-size:.75rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--pink)}
 #sing{font-family:var(--display);font-size:clamp(2rem,9vw,3.6rem);line-height:1.08;color:var(--spot);text-wrap:balance;
-  text-shadow:0 0 28px #ffd23f55;transition:opacity .2s}
+  text-shadow:0 0 28px #ffb54755;transition:opacity .2s}
 #sing.vibe{color:var(--ink);font-size:clamp(1.6rem,7vw,2.6rem);text-shadow:none}
 #next{font-size:1.15rem;color:var(--mist);text-wrap:balance;min-height:1.4em}
 #count{font-variant-numeric:tabular-nums}
@@ -134,8 +133,8 @@ summary{cursor:pointer;color:var(--mist);font-weight:600}
 <body>
 <header>
   <div class="brand">
-    <div class="papis"><img src="img/juanpablo.png" alt="Papisito Juan Pablo"><img src="img/juliano.png" alt="Papisito Juliano"></div>
-    <div><h1>Papisitos<span>Cantantes</span></h1><div class="edition">Alanis Morissette edition</div></div>
+    <img class="logo" src="img/pill.png" alt="">
+    <div><h1>Jagged Little <span>Pill</span></h1><div class="edition">Alanis Morissette edition</div></div>
   </div>
   <div class="now" id="nowPlaying">Pick a song to start</div>
 </header>
@@ -149,7 +148,7 @@ summary{cursor:pointer;color:var(--mist);font-weight:600}
     <li class="tonight"><b>2</b><div><span class="when">Tonight, on Wi‑Fi</span>Save the lyrics to your phone. Arena signal is terrible, and this makes the songs work without it.
       <button id="saveAll">⬇ Save all songs for offline</button></div></li>
     <li><b>3</b><div><span class="when">When a song starts</span>Tap <b>🎧 What song is this?</b> and hold your phone up. Or just tap the song in the list.</div></li>
-    <li><b>4</b><div><span class="when">Sing</span>Big <b style="color:var(--spot)">yellow lines</b> = everyone sings. When it says “Just vibe”, dance with Hank, Blanquita &amp; Trey.</div></li>
+    <li><b>4</b><div><span class="when">Sing</span>Big <b style="color:var(--spot)">gold lines</b> = everyone sings. When it says “Just vibe”, dance with Lo, Blanquita &amp; Josie.</div></li>
     <li><b>5</b><div><span class="when">Out of sync?</span>Hit <b>🎯 The hook just started!</b> when the crowd starts the chorus.</div></li>
   </ol>
   <button class="down" id="toListen" aria-label="Go to the song finder">Let’s go
@@ -172,9 +171,9 @@ summary{cursor:pointer;color:var(--mist);font-weight:600}
   <div class="label" id="mode">How it works</div>
   <div id="sing" class="vibe">Pick the song, tap “It started!” when the beat drops.</div>
   <div class="dancers" id="dancers" aria-label="Backup dancers">
-    <figure><img src="img/hank.png" alt=""><figcaption>Hank</figcaption></figure>
-    <figure><img src="img/blanquita.png" alt=""><figcaption>Blanquita</figcaption></figure>
-    <figure><img src="img/trey.png" alt=""><figcaption>Trey</figcaption></figure>
+    <figure><img src="img/lo.png" alt=""><figcaption>Lo</figcaption></figure>
+    <figure><img src="img/blanca.png" alt=""><figcaption>Blanquita</figcaption></figure>
+    <figure><img src="img/josie.png" alt=""><figcaption>Josie</figcaption></figure>
   </div>
   <div id="next">Only the lines the whole crowd sings show up big. Everything else, just vibe.</div>
 </section>
@@ -190,7 +189,7 @@ summary{cursor:pointer;color:var(--mist);font-weight:600}
     <button class="ghost" id="fwd">+2s</button>
   </div>
   <details>
-    <summary>Full song (yellow = must‑sing) · tap a line = “they’re singing this now”</summary>
+    <summary>Full song (gold = must‑sing) · tap a line = “they’re singing this now”</summary>
     <ul id="all"></ul>
   </details>
 </div>
