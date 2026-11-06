@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>PapisitosCantantes</title>
-<meta name="description" content="Sing the must-know lines at the Jay-Z concert. Tap 🎧 and it finds the song.">
+<meta name="description" content="Sing the must-know lines at the Alanis Morissette show. Tap 🎧 and it finds the song.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://29blancalf.github.io/papisitos-cantantes/">
-<meta property="og:title" content="PapisitosCantantes · Jay-Z edition">
-<meta property="og:description" content="Sing the must-know lines at the Jay-Z concert. Tap 🎧 and it finds the song.">
+<meta property="og:title" content="PapisitosCantantes · Alanis edition">
+<meta property="og:description" content="Sing the must-know lines at the Alanis Morissette show. Tap 🎧 and it finds the song.">
 <meta property="og:image" content="https://29blancalf.github.io/papisitos-cantantes/img/share.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="1200">
@@ -135,7 +135,7 @@ summary{cursor:pointer;color:var(--mist);font-weight:600}
 <header>
   <div class="brand">
     <div class="papis"><img src="img/juanpablo.png" alt="Papisito Juan Pablo"><img src="img/juliano.png" alt="Papisito Juliano"></div>
-    <div><h1>Papisitos<span>Cantantes</span></h1><div class="edition">Jay‑Z edition</div></div>
+    <div><h1>Papisitos<span>Cantantes</span></h1><div class="edition">Alanis Morissette edition</div></div>
   </div>
   <div class="now" id="nowPlaying">Pick a song to start</div>
 </header>
@@ -159,7 +159,7 @@ summary{cursor:pointer;color:var(--mist);font-weight:600}
 <button class="listen" id="listenBtn"><span class="bar"></span><span class="txt">🎧 What song is this?</span></button>
 <p class="hint" id="heard">Hold your phone up during a part with a clear beat.</p>
 <div id="pick">
-  <p class="hint">Or tap the song he’s playing:</p>
+  <p class="hint">Or tap the song she’s playing:</p>
   <div class="setlist" id="setlist"></div>
 </div>
 <form id="searchForm">
@@ -202,8 +202,8 @@ let t0 = null;           // performance.now() at song time 0
 let pausedAt = null;     // song time when paused
 let wakeLock = null;
 
-// ---------- Jay-Z setlist (LRCLIB ids picked ahead of time) ----------
-const SETLIST = [["99 Problems",37119792],["Empire State of Mind",36839702],["Run This Town",36973556],["Izzo (H.O.V.A.)",36850389],["Big Pimpin'",37128680],["Hard Knock Life",36924860],["Dirt Off Your Shoulder",18632629],["N****s in Paris",34531201],["Public Service Announcement",36110472],["Encore",20016108],["Numb / Encore",24014958],["Holy Grail",25235214],["Crazy in Love",24078279],["Drunk in Love",34159162],["Otis",4738800],["No Church in the Wild",12306833],["On to the Next One",10296548],["Swagga Like Us",4895642],["Roc Boys",10048434],["Jigga What",26075459],["Excuse Me Miss",34588131],["Umbrella",31723666],["Song Cry",37180857],["Can I Get A…",33760264],["Young Forever",35416663],["Heart of the City",34520293],["Show Me What You Got",18546186],["Dead Presidents",37137661],["Allure",17481647],["Already Home",4694608],["The Story of O.J.",8951747],["4:44",35910862],["Tom Ford",25280815],["Blue Magic",532533],["Money Ain't a Thang",544638],["'03 Bonnie & Clyde",18676684]];
+// ---------- Alanis setlist (LRCLIB ids picked ahead of time) ----------
+const SETLIST = [["You Oughta Know",7080205],["Ironic",7232131],["Hand in My Pocket",8166773],["Head Over Feet",23930188],["You Learn",28344705],["All I Really Want",4827035],["Hands Clean",7952239],["Thank U",7830708],["Uninvited",7225664],["Right Through You",4829674],["Perfect",4896614],["Forgiven",4156572],["Mary Jane",7561509],["Not the Doctor",7561678],["Wake Up",3940947],["So Pure",3940690],["Joining You",30646216],["Everything",4998616],["That I Would Be Good",4999729],["Unsent",3161736],["Precious Illusions",3940367],["21 Things I Want in a Lover",3939173],["Utopia",3940938],["Underneath",7394709],["Out Is Through",4999386],["Eight Easy Steps",3939540],["Front Row",3939698],["Sympathetic Character",215523],["Narcissus",3940235],["Flinch",3939647],["Torch",6466439],["Excuses",3939613],["Guardian",5251402],["Ablaze",321100],["Reasons I Drink",7335586],["Smiling",4999616]];
 SETLIST.forEach(([name, id]) => {
   const b = document.createElement('button');
   b.textContent = name;
